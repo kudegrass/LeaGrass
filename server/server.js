@@ -6,13 +6,14 @@ const jwt = require('jsonwebtoken');
 const app = express();
 app.use(express.json());
 
-CB_CONNECTION_STRING=//cb.4bvdymrynsvq5fea.cloud.couchbase.com
-CB_USERNAME=grasscom_user
-CB_PASSWORD=112600
-CB_BUCKET_NAME=Grasscom
-CB_SCOPE_NAME=Collection
-CB_COLLECTION_NAME=Data
-JWT_SECRET=112600
+// ✅ Correct: Use 'const' and quotes
+const CB_CONNECTION_STRING = 'cb.4bvdymrynsvq5fea.cloud.couchbase.com';
+const CB_USERNAME = 'grasscom_user';
+const CB_PASSWORD = '112600';
+const CB_BUCKET_NAME = 'Grasscom';
+const CB_SCOPE_NAME = 'Collection';
+const CB_COLLECTION_NAME = 'Data';
+const JWT_SECRET = '112600';
 
 let collection;
 
@@ -104,7 +105,10 @@ app.get('/', (req, res) => {
   res.send('<h1>LeaGrass API Ready</h1><p>Use /api/register, /api/login</p>');
 });
 
+// Start
 (async () => {
   await connectToCouchbase();
-  app.listen(3000, () => console.log('🚀 Server running on http://localhost:3000'));
+  app.listen(process.env.PORT || 10000, '0.0.0.0', () => {
+    console.log('🚀 Server running on port ' + (process.env.PORT || 10000));
+  });
 })();
