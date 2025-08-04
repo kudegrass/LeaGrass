@@ -1,7 +1,4 @@
-{
-  "dependencies": {
-    "bcrypt": "^6.0.0",
-    "jsonwebtoken": "^9.0.2",
-    "mongoose": "^8.17.0"
-  }
+"scripts": {
+  "start": "node server/server.js",
+  "dev": "nodemon server/server.js"
 }
