@@ -54,14 +54,3 @@ document.addEventListener('DOMContentLoaded', function() {
             .join(' ');
     }
 });
-// Add to your existing script.js
-async function loadExam(subject) {
-  try {
-    const response = await fetch(`/api/exams/${subject}`);
-    const questions = await response.json();
-    console.log(`Loaded ${questions.length} questions for ${subject}`);
-    // Here you would display the questions
-  } catch (error) {
-    console.error('Error loading exam:', error);
-  }
-}
