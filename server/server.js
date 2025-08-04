@@ -7,13 +7,13 @@ const app = express();
 app.use(express.json());
 
 // ✅ Correct: Use 'const' and quotes
-const CB_CONNECTION_STRING = 'cb.4bvdymrynsvq5fea.cloud.couchbase.com';
-const CB_USERNAME = 'grasscom_user';
-const CB_PASSWORD = '112600';
-const CB_BUCKET_NAME = 'Grasscom';
-const CB_SCOPE_NAME = 'Collection';
-const CB_COLLECTION_NAME = 'Data';
-const JWT_SECRET = '112600';
+const CB_CONNECTION_STRING = process.env.CB_CONNECTION_STRING;
+const CB_USERNAME = process.env.CB_USERNAME;
+const CB_PASSWORD = process.env.CB_PASSWORD;
+const CB_BUCKET_NAME = process.env.CB_BUCKET_NAME;
+const CB_SCOPE_NAME = process.env.CB_SCOPE_NAME;
+const CB_COLLECTION_NAME = process.env.CB_COLLECTION_NAME;
+const JWT_SECRET = process.env.JWT_SECRET;
 
 let collection;
 
@@ -109,6 +109,6 @@ app.get('/', (req, res) => {
 (async () => {
   await connectToCouchbase();
   app.listen(process.env.PORT || 10000, '0.0.0.0', () => {
-    console.log('🚀 Server running on port ' + (process.env.PORT || 10000));
-  });
+  console.log('🚀 Server running');
+});
 })();
