@@ -93,6 +93,7 @@ async function connectToCouchbase() {
 }
 
 // Test route
+// Replace this problematic code:
 app.get('/api/health', async (req, res) => {
   try {
     const { cluster } = await connectToCouchbase();
@@ -102,16 +103,25 @@ app.get('/api/health', async (req, res) => {
       status: 'Server is running',
       database: 'Couchbase connected',
       cluster: clusterInfo.name,
-      bucket: CB_BUCKET_NAME,
-      timestamp: new Date().toISOString()
+      bucket: CB_BUCKET_NAME
     });
   } catch (error) {
     res.status(500).json({ 
       status: 'Server running, but database connection failed',
-      error: error.message,
-      timestamp: new Date().toISOString()
+      error: error.message 
     });
   }
+});
+
+// With this corrected version:
+let couchbaseConnected = false;
+
+app.get('/api/health', (req, res) => {
+  res.json({ 
+    status: 'Server is running',
+    database: couchbaseConnected ? 'Couchbase connected' : 'Database connection pending',
+    timestamp: new Date().toISOString()
+  });
 });
 
 // User registration
@@ -218,9 +228,14 @@ app.post('/api/auth/login', async (req, res) => {
 });
 
 // Start server
+// Replace the entire startup section with:
 (async () => {
   try {
+    // Connect to Couchbase first
     await connectToCouchbase();
+    couchbaseConnected = true;
+    
+    // Start the Express server
     app.listen(PORT, () => {
       console.log(`\n🚀 Grass.com Server Started`);
       console.log(`   Port: http://localhost:${PORT}`);
