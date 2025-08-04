@@ -3,302 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Grass.com - Licensure Review for Agriculturists">
   <title>Grass.com</title>
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='80'>🌱</text></svg>">
-  
-  <!-- CSS -->
-  <style>
-    /* Reset & Base Styles */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(135deg, #f0faf2, #fdf9e8);
-      color: #333;
-      line-height: 1.6;
-    }
-
-    header {
-      background: white;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-      padding: 1rem 2rem;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      border-bottom: 4px solid #2e7d32;
-    }
-
-    .logo {
-      font-size: 1.8rem;
-      font-weight: bold;
-      color: #2e7d32;
-      text-decoration: none;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .logo span {
-      color: #e38b29;
-    }
-
-    nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    nav ul {
-      display: flex;
-      list-style: none;
-      gap: 2rem;
-    }
-
-    nav a {
-      text-decoration: none;
-      color: #2e7d32;
-      font-weight: 600;
-      font-size: 1.1rem;
-      padding: 0.5rem 0;
-      border-bottom: 3px solid transparent;
-      transition: 0.3s;
-    }
-
-    nav a:hover, nav a.active {
-      border-bottom-color: #2e7d32;
-    }
-
-    main {
-      max-width: 1200px;
-      margin: 2rem auto;
-      padding: 0 1rem;
-    }
-
-    section {
-      background: white;
-      border-radius: 12px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-      padding: 2rem;
-      margin-bottom: 2rem;
-      display: none;
-    }
-
-    section.active {
-      display: block;
-    }
-
-    h1 {
-      font-size: 2.5rem;
-      color: #1b5e20;
-      margin-bottom: 0.5rem;
-      text-align: center;
-    }
-
-    h2 {
-      font-size: 1.8rem;
-      color: #1b5e20;
-      border-bottom: 2px solid #e8f5e8;
-      padding-bottom: 0.5rem;
-      margin-bottom: 1.5rem;
-    }
-
-    h3 {
-      color: #2c3e50;
-      margin-bottom: 0.8rem;
-    }
-
-    p {
-      margin-bottom: 1rem;
-      color: #555;
-    }
-
-    .tagline {
-      text-align: center;
-      font-size: 1.2rem;
-      color: #e38b29;
-      font-weight: 500;
-      margin-bottom: 2rem;
-    }
-
-    .search-box {
-      display: flex;
-      margin-bottom: 1.5rem;
-    }
-
-    .search-box input {
-      flex: 1;
-      padding: 0.8rem;
-      border: 1px solid #ccc;
-      border-radius: 8px 0 0 8px;
-      font-size: 1rem;
-    }
-
-    .search-box button {
-      background: #2e7d32;
-      color: white;
-      border: none;
-      padding: 0 1.2rem;
-      border-radius: 0 8px 8px 0;
-      cursor: pointer;
-    }
-
-    .area-card {
-      border: 1px solid #e0e0e0;
-      border-radius: 10px;
-      padding: 1.5rem;
-      margin-bottom: 1rem;
-      background: #f9fdf9;
-      transition: transform 0.2s;
-    }
-
-    .area-card:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 6px 12px rgba(0,0,0,0.1);
-    }
-
-    .area-card h3 {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      color: #1b5e20;
-    }
-
-    .topic-list {
-      list-style: none;
-      margin: 1rem 0;
-    }
-
-    .topic-list li {
-      padding: 0.4rem 0;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .topic-list li::before {
-      content: "•";
-      color: #2e7d32;
-      font-weight: bold;
-    }
-
-    .resource-list {
-      list-style: none;
-      margin: 1rem 0;
-    }
-
-    .resource-list li {
-      padding: 0.6rem 0;
-      border-bottom: 1px dashed #ddd;
-    }
-
-    .resource-list a {
-      color: #1976d2;
-      text-decoration: none;
-      font-weight: 500;
-    }
-
-    .resource-list a:hover {
-      text-decoration: underline;
-    }
-
-    .btn {
-      background: #2e7d32;
-      color: white;
-      border: none;
-      padding: 0.7rem 1.5rem;
-      border-radius: 6px;
-      cursor: pointer;
-      font-size: 1rem;
-      font-weight: 600;
-      margin-top: 1rem;
-      transition: 0.3s;
-    }
-
-    .btn:hover {
-      background: #1b5e20;
-    }
-
-    .quiz-container {
-      max-width: 800px;
-      margin: 2rem auto;
-      background: white;
-      border-radius: 12px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-      padding: 2rem;
-    }
-
-    .quiz-question {
-      font-size: 1.2rem;
-      font-weight: 600;
-      margin-bottom: 1.5rem;
-      color: #2c3e50;
-    }
-
-    .quiz-options button {
-      display: block;
-      width: 100%;
-      text-align: left;
-      padding: 1rem;
-      margin: 0.5rem 0;
-      background: #f8f9fa;
-      border: 1px solid #dee2e6;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: 0.3s;
-    }
-
-    .quiz-options button:hover {
-      background: #e9f7ef;
-    }
-
-    .quiz-options button.selected {
-      background: #d4edda;
-      border-color: #c3e6cb;
-    }
-
-    .quiz-nav {
-      display: flex;
-      justify-content: space-between;
-      margin-top: 2rem;
-    }
-
-    .result-box {
-      text-align: center;
-      padding: 2rem;
-      background: #e8f5e8;
-      border-radius: 10px;
-      margin: 1rem 0;
-    }
-
-    footer {
-      text-align: center;
-      padding: 2rem;
-      background: #1b5e20;
-      color: white;
-      margin-top: 4rem;
-    }
-
-    @media (max-width: 768px) {
-      nav ul {
-        flex-direction: column;
-        gap: 1rem;
-      }
-
-      h1 {
-        font-size: 2rem;
-      }
-
-      .area-card, .quiz-container {
-        padding: 1rem;
-      }
-    }
-  </style>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/style.css">
 </head>
-
 <body>
 
   <!-- Header -->
@@ -306,10 +15,10 @@
     <nav>
       <a href="#" class="logo">🌱 <span>Grass</span>.com</a>
       <ul>
-        <li><a href="#dashboard" class="active" onclick="showSection('dashboard')">Home</a></li>
-        <li><a href="#areas" onclick="showSection('areas')">Review Areas</a></li>
-        <li><a href="#mock-tests" onclick="showSection('mock-tests')">Practice</a></li>
-        <li><a href="#resources" onclick="showSection('resources')">Resources</a></li>
+        <li><a href="#dashboard" class="active" data-nav>Home</a></li>
+        <li><a href="#areas" data-nav>Review Areas</a></li>
+        <li><a href="#mock-tests" data-nav>Practice</a></li>
+        <li><a href="#resources" data-nav>Resources</a></li>
       </ul>
     </nav>
   </header>
@@ -318,28 +27,20 @@
     <!-- Dashboard -->
     <section id="dashboard" class="active">
       <h1>Grass.com</h1>
-      <p class="tagline">Your Licensure Review Companion for Agriculturists</p>
+      <p class="tagline">Your Smart Review Partner for Agriculturist Licensure</p>
 
-      <div style="background: linear-gradient(135deg, #e8f5e8, #f1f8e9); padding: 2.5rem; border-radius: 12px; text-align: center; margin: 2rem 0;">
-        <h2 style="color:#2e7d32;">Welcome to Grass.com 🌾</h2>
-        <p style="font-size:1.1rem; margin-bottom:1.5rem;">
-          The ultimate review platform for the Agriculturist Licensure Examination.
-        </p>
-        <p>Explore structured lessons, take mock exams, and access trusted resources — all in one place.</p>
-      </div>
-
-      <div style="display:flex; gap:1.5rem; flex-wrap:wrap; justify-content:center; margin-top:2rem;">
-        <div style="flex:1; min-width:250px; background:#f0f9ff; padding:1.5rem; border-radius:10px; text-align:center;">
-          <h3>📚 6 Major Areas</h3>
-          <p>Covering all topics in the official exam syllabus</p>
+      <div class="hero-grid">
+        <div class="card">
+          <h3>📚 Full Coverage</h3>
+          <p>6 major areas aligned with the official exam syllabus</p>
         </div>
-        <div style="flex:1; min-width:250px; background:#fff8e1; padding:1.5rem; border-radius:10px; text-align:center;">
-          <h3>📝 Practice Tests</h3>
-          <p>Test your knowledge with realistic mock exams</p>
+        <div class="card">
+          <h3>📝 Mock Exams</h3>
+          <p>Test your knowledge with realistic practice quizzes</p>
         </div>
-        <div style="flex:1; min-width:250px; background:#e8f5e8; padding:1.5rem; border-radius:10px; text-align:center;">
-          <h3>🔗 Expert Resources</h3>
-          <p>Links to official guides, research, and tools</p>
+        <div class="card">
+          <h3>🔗 Trusted Resources</h3>
+          <p>Links to FAO, DA, and academic references</p>
         </div>
       </div>
     </section>
@@ -347,37 +48,34 @@
     <!-- Review Areas -->
     <section id="areas">
       <h2>Review Areas</h2>
-      <p>Select a subject to begin your study session.</p>
+      <p>Select a subject to begin studying.</p>
       <div class="search-box">
-        <input type="text" id="searchInput" placeholder="Search areas..." onkeyup="searchAreas()">
-        <button>Search</button>
+        <input type="text" id="searchInput" placeholder="Search areas...">
+        <button id="searchBtn">Search</button>
       </div>
-
-      <div id="areasContainer">
-        <!-- Areas will be injected here by JS -->
-      </div>
+      <div id="areasContainer"></div>
     </section>
 
     <!-- Mock Tests -->
     <section id="mock-tests">
       <h2>Practice Quiz</h2>
-      <p>Test your knowledge with 5 sample questions.</p>
-      <button class="btn" onclick="startQuiz()">Start Mock Test</button>
+      <p>Answer 5 sample questions to test your readiness.</p>
+      <button class="btn" id="startQuizBtn">Start Quiz</button>
 
-      <div id="quizContainer" style="display:none;">
-        <div style="margin-bottom:1rem;">
+      <div id="quizContainer" class="quiz-container" style="display:none;">
+        <div class="quiz-header">
           <strong>Question <span id="currentNum">1</span> of <span id="totalNum">5</span></strong>
         </div>
-        <p id="quizQuestion" class="quiz-question">Loading question...</p>
-        <div class="quiz-options" id="quizOptions"></div>
+        <p id="quizQuestion" class="quiz-question"></p>
+        <div id="quizOptions" class="quiz-options"></div>
         <div class="quiz-nav">
-          <button class="btn" onclick="prevQuestion()">← Previous</button>
-          <button class="btn" onclick="nextQuestion()">Next →</button>
+          <button class="btn" id="prevBtn">← Previous</button>
+          <button class="btn" id="nextBtn">Next →</button>
         </div>
         <div id="resultBox" class="result-box" style="display:none;">
           <h3>🎉 Quiz Complete!</h3>
           <p>Your Score: <strong><span id="scoreValue">0</span>%</strong></p>
-          <button class="btn" onclick="resetQuiz()">Try Again</button>
+          <button class="btn" id="retakeBtn">Try Again</button>
         </div>
       </div>
     </section>
@@ -385,300 +83,17 @@
     <!-- Resources -->
     <section id="resources">
       <h2>Recommended Resources</h2>
-      <p>Trusted external links for deeper learning and official guidelines.</p>
-      <div id="resourcesContainer">
-        <!-- Resources will be injected here -->
-      </div>
+      <p>Official and academic links for deeper study.</p>
+      <div id="resourcesContainer"></div>
     </section>
   </main>
 
   <footer>
-    <p>&copy; 2024 Grass.com | Licensure Review Platform for Agriculturists</p>
-    <p>Empowering future agricultural professionals.</p>
+    <p>&copy; 2024 Grass.com | Empowering Future Agriculturists</p>
+    <p>For educational use only. Not affiliated with PRC or DA.</p>
   </footer>
 
   <!-- JavaScript -->
-  <script>
-    // Review Areas Data
-    const areas = [
-      {
-        id: 'crop-science',
-        name: '🌾 Crop Science',
-        desc: 'Study of crop production, physiology, genetics, and sustainable farming systems.',
-        topics: [
-          'Plant Physiology and Morphology',
-          'Crop Production Systems',
-          'Plant Breeding and Genetics',
-          'Horticulture and Floriculture'
-        ]
-      },
-      {
-        id: 'soil-science',
-        name: '🧪 Soil Science',
-        desc: 'Soil properties, fertility, classification, and conservation methods.',
-        topics: [
-          'Soil Formation and Classification',
-          'Soil Fertility and Nutrient Management',
-          'Soil Conservation Techniques'
-        ]
-      },
-      {
-        id: 'crop-protection',
-        name: '🛡️ Crop Protection',
-        desc: 'Integrated Pest Management (IPM), diseases, weeds, and pesticide safety.',
-        topics: [
-          'Integrated Pest Management (IPM)',
-          'Pesticide Safety and Application',
-          'Biological Control Methods'
-        ]
-      },
-      {
-        id: 'animal-science',
-        name: '🐄 Animal Science',
-        desc: 'Animal nutrition, breeding, health, and livestock production management.',
-        topics: [
-          'Animal Nutrition and Feeding',
-          'Livestock Health and Disease Control',
-          'Dairy and Poultry Production'
-        ]
-      },
-      {
-        id: 'agricultural-economics',
-        name: '💰 Agricultural Economics',
-        desc: 'Farm management, marketing, pricing, and agricultural policy analysis.',
-        topics: [
-          'Farm Management and Accounting',
-          'Agricultural Market Analysis',
-          'Cooperative Economics'
-        ]
-      },
-      {
-        id: 'agricultural-extension',
-        name: '📢 Agricultural Extension',
-        desc: 'Communication, education, and technology transfer in rural communities.',
-        topics: [
-          'Extension Methodologies',
-          'Rural Development Approaches',
-          'Program Planning and Evaluation'
-        ]
-      }
-    ];
-
-    // Resources Data
-    const resources = {
-      'crop-science': [
-        { title: 'FAO Crop Production Guidelines', url: 'https://www.fao.org/crop-production' },
-        { title: 'Philippine Crop Science Society', url: 'https://www.philcropscience.org' }
-      ],
-      'soil-science': [
-        { title: 'FAO Soil Portal', url: 'https://www.fao.org/soils-portal' },
-        { title: 'Soil Science Society of America', url: 'https://www.soils.org' }
-      ],
-      'crop-protection': [
-        { title: 'IPM Guidelines - FAO', url: 'https://www.fao.org/ipm' },
-        { title: 'Plantwise Knowledge Bank', url: 'https://www.plantwise.org' }
-      ],
-      'animal-science': [
-        { title: 'FAO Animal Production', url: 'https://www.fao.org/animal-production' },
-        { title: 'Livestock Vaccine Guide', url: 'https://www.oie.int' }
-      ],
-      'agricultural-economics': [
-        { title: 'FAO Agricultural Economics', url: 'https://www.fao.org/economic' },
-        { title: 'Global Agricultural Trade System', url: 'https://apps.fas.usda.gov/gats' }
-      ],
-      'agricultural-extension': [
-        { title: 'Global Forum for Rural Advisory Services', url: 'https://gfras.org' },
-        { title: 'Extension Best Practices', url: 'https://www.extension.org' }
-      ]
-    };
-
-    // Mock Quiz Questions
-    const quizQuestions = [
-      {
-        question: "Which of the following is a C4 plant?",
-        options: ["Rice", "Wheat", "Maize", "Soybean"],
-        answer: 2
-      },
-      {
-        question: "What is the primary function of stomata in plants?",
-        options: ["Water absorption", "Photosynthesis", "Gas exchange", "Nutrient transport"],
-        answer: 2
-      },
-      {
-        question: "Which soil horizon contains the most organic matter?",
-        options: ["A-horizon", "B-horizon", "C-horizon", "R-horizon"],
-        answer: 0
-      },
-      {
-        question: "What does IPM stand for in agriculture?",
-        options: ["Integrated Plant Management", "Integrated Pest Management", "Intensive Production Method", "Internal Plant Monitoring"],
-        answer: 1
-      },
-      {
-        question: "Which of the following is a ruminant animal?",
-        options: ["Pig", "Chicken", "Goat", "Horse"],
-        answer: 2
-      }
-    ];
-
-    // Quiz State
-    let currentQ = 0;
-    let userAnswers = [];
-    let score = 0;
-
-    // DOM Loaded
-    document.addEventListener('DOMContentLoaded', () => {
-      loadAreas();
-      loadResources();
-    });
-
-    // Show Section
-    function showSection(id) {
-      document.querySelectorAll('section').forEach(sec => {
-        sec.classList.remove('active');
-      });
-      document.getElementById(id).classList.add('active');
-
-      document.querySelectorAll('nav a').forEach(a => {
-        a.classList.remove('active');
-      });
-      document.querySelector(`nav a[href="#${id}"]`).classList.add('active');
-    }
-
-    // Load Areas
-    function loadAreas() {
-      const container = document.getElementById('areasContainer');
-      container.innerHTML = '';
-      areas.forEach(area => {
-        let html = `
-          <div class="area-card">
-            <h3>${area.name}</h3>
-            <p>${area.desc}</p>
-            <ul class="topic-list">
-        `;
-        area.topics.forEach(t => {
-          html += `<li>${t}</li>`;
-        });
-        html += `</ul></div>`;
-        container.innerHTML += html;
-      });
-    }
-
-    // Search Areas
-    function searchAreas() {
-      const term = document.getElementById('searchInput').value.toLowerCase();
-      const container = document.getElementById('areasContainer');
-      container.innerHTML = '';
-
-      const filtered = areas.filter(a => 
-        a.name.toLowerCase().includes(term) || 
-        a.desc.toLowerCase().includes(term)
-      );
-
-      if (filtered.length === 0) {
-        container.innerHTML = '<p style="color:#666; font-style:italic;">No areas match your search.</p>';
-      } else {
-        filtered.forEach(area => {
-          let html = `
-            <div class="area-card">
-              <h3>${area.name}</h3>
-              <p>${area.desc}</p>
-              <ul class="topic-list">
-          `;
-          area.topics.forEach(t => {
-            html += `<li>${t}</li>`;
-          });
-          html += `</ul></div>`;
-          container.innerHTML += html;
-        });
-      }
-    }
-
-    // Load Resources
-    function loadResources() {
-      const container = document.getElementById('resourcesContainer');
-      container.innerHTML = '';
-
-      areas.forEach(area => {
-        let html = `<h3>${area.name}</h3><ul class="resource-list">`;
-        (resources[area.id] || []).forEach(res => {
-          html += `<li><a href="${res.url}" target="_blank">${res.title}</a></li>`;
-        });
-        html += `</ul>`;
-        container.innerHTML += html;
-      });
-    }
-
-    // Quiz Functions
-    function startQuiz() {
-      document.getElementById('quizContainer').style.display = 'block';
-      currentQ = 0;
-      userAnswers = [];
-      score = 0;
-      showQuestion();
-    }
-
-    function showQuestion() {
-      const q = quizQuestions[currentQ];
-      document.getElementById('currentNum').textContent = currentQ + 1;
-      document.getElementById('totalNum').textContent = quizQuestions.length;
-      document.getElementById('quizQuestion').textContent = q.question;
-
-      const optionsContainer = document.getElementById('quizOptions');
-      optionsContainer.innerHTML = '';
-      q.options.forEach((opt, index) => {
-        const btn = document.createElement('button');
-        btn.textContent = opt;
-        if (userAnswers[currentQ] === index) {
-          btn.classList.add('selected');
-        }
-        btn.onclick = () => selectAnswer(index);
-        optionsContainer.appendChild(btn);
-      });
-
-      document.getElementById('resultBox').style.display = 'none';
-    }
-
-    function selectAnswer(index) {
-      userAnswers[currentQ] = index;
-      document.querySelectorAll('.quiz-options button').forEach(btn => {
-        btn.classList.remove('selected');
-      });
-      event.target.classList.add('selected');
-    }
-
-    function nextQuestion() {
-      if (currentQ < quizQuestions.length - 1) {
-        currentQ++;
-        showQuestion();
-      } else {
-        calculateScore();
-      }
-    }
-
-    function prevQuestion() {
-      if (currentQ > 0) {
-        currentQ--;
-        showQuestion();
-      }
-    }
-
-    function calculateScore() {
-      score = 0;
-      quizQuestions.forEach((q, i) => {
-        if (userAnswers[i] === q.answer) score++;
-      });
-      const percentage = Math.round((score / quizQuestions.length) * 100);
-      document.getElementById('scoreValue').textContent = percentage;
-      document.getElementById('resultBox').style.display = 'block';
-      document.querySelector('.quiz-nav').style.display = 'none';
-    }
-
-    function resetQuiz() {
-      document.getElementById('quizContainer').style.display = 'none';
-      document.querySelector('.quiz-nav').style.display = 'flex';
-    }
-  </script>
-
+  <script src="js/script.js"></script>
 </body>
 </html>
