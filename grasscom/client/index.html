@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grass.com - Agriculturist Licensure Exam Review</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>Grass.com</h1>
+                <p>Your Premier Agriculturist Licensure Exam Review Portal</p>
+            </div>
+            <nav>
+                <ul id="nav-links">
+                    <li><a href="#home" class="active">Home</a></li>
+                    <li><a href="#review-materials">Review Materials</a></li>
+                    <li><a href="#mock-exams">Mock Exams</a></li>
+                    <li><a href="#resources">Resources</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li id="auth-button">Login</li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="container">
+                <h2>Prepare for Your Agriculturist Licensure Exam</h2>
+                <p>Comprehensive review materials, practice exams, and reliable resources to help you succeed</p>
+                <button id="start-review-btn" class="cta-button">Start Reviewing</button>
+            </div>
+        </section>
+
+        <section id="review-materials" class="review-section">
+            <div class="container">
+                <h2>Review Materials by Subject Area</h2>
+                <div class="subject-grid">
+                    <div class="subject-card" data-subject="crop-science">
+                        <div class="subject-icon">🌾</div>
+                        <h3>Crop Science</h3>
+                        <p>Plant physiology, crop production, agronomy, and crop management</p>
+                        <button class="view-materials-btn">View Materials</button>
+                    </div>
+                    <div class="subject-card" data-subject="soil-science">
+                        <div class="subject-icon">🌍</div>
+                        <h3>Soil Science</h3>
+                        <p>Soil classification, fertility, management, and conservation</p>
+                        <button class="view-materials-btn">View Materials</button>
+                    </div>
+                    <div class="subject-card" data-subject="crop-protection">
+                        <div class="subject-icon">🛡️</div>
+                        <h3>Crop Protection</h3>
+                        <p>Pest management, diseases, integrated pest management, and pesticides</p>
+                        <button class="view-materials-btn">View Materials</button>
+                    </div>
+                    <div class="subject-card" data-subject="animal-science">
+                        <div class="subject-icon">🐄</div>
+                        <h3>Animal Science</h3>
+                        <p>Animal production, nutrition, breeding, and health management</p>
+                        <button class="view-materials-btn">View Materials</button>
+                    </div>
+                    <div class="subject-card" data-subject="agricultural-economics">
+                        <div class="subject-icon">📊</div>
+                        <h3>Agricultural Economics & Marketing</h3>
+                        <p>Agribusiness, farm management, marketing, and economic principles</p>
+                        <button class="view-materials-btn">View Materials</button>
+                    </div>
+                    <div class="subject-card" data-subject="agricultural-extension">
+                        <div class="subject-icon">📢</div>
+                        <h3>Agricultural Extension & Communication</h3>
+                        <p>Extension methods, communication strategies, and rural development</p>
+                        <button class="view-materials-btn">View Materials</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="mock-exams" class="exam-section">
+            <div class="container">
+                <h2>Mock Examinations</h2>
+                <p>Test your knowledge with comprehensive 100-question exams for each subject area</p>
+                <div class="exam-grid">
+                    <div class="exam-card" data-exam="crop-science">
+                        <h3>Crop Science Mock Exam</h3>
+                        <div class="exam-info">
+                            <span class="questions">100 Questions</span>
+                            <span class="time">2 Hours</span>
+                        </div>
+                        <button class="take-exam-btn">Take Exam</button>
+                    </div>
+                    <div class="exam-card" data-exam="soil-science">
+                        <h3>Soil Science Mock Exam</h3>
+                        <div class="exam-info">
+                            <span class="questions">100 Questions</span>
+                            <span class="time">2 Hours</span>
+                        </div>
+                        <button class="take-exam-btn">Take Exam</button>
+                    </div>
+                    <div class="exam-card" data-exam="crop-protection">
+                        <h3>Crop Protection Mock Exam</h3>
+                        <div class="exam-info">
+                            <span class="questions">100 Questions</span>
+                            <span class="time">2 Hours</span>
+                        </div>
+                        <button class="take-exam-btn">Take Exam</button>
+                    </div>
+                    <div class="exam-card" data-exam="animal-science">
+                        <h3>Animal Science Mock Exam</h3>
+                        <div class="exam-info">
+                            <span class="questions">100 Questions</span>
+                            <span class="time">2 Hours</span>
+                        </div>
+                        <button class="take-exam-btn">Take Exam</button>
+                    </div>
+                    <div class="exam-card" data-exam="agricultural-economics">
+                        <h3>Agricultural Economics Mock Exam</h3>
+                        <div class="exam-info">
+                            <span class="questions">100 Questions</span>
+                            <span class="time">2 Hours</span>
+                        </div>
+                        <button class="take-exam-btn">Take Exam</button>
+                    </div>
+                    <div class="exam-card" data-exam="agricultural-extension">
+                        <h3>Agricultural Extension Mock Exam</h3>
+                        <div class="exam-info">
+                            <span class="questions">100 Questions</span>
+                            <span class="time">2 Hours</span>
+                        </div>
+                        <button class="take-exam-btn">Take Exam</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="resources" class="resources-section">
+            <div class="container">
+                <h2>Recommended Resources</h2>
+                <div class="resources-container">
+                    <div class="resource-category">
+                        <h3>📚 Crop Science</h3>
+                        <ul>
+                            <li><a href="https://www.fao.org/agriculture/crops/en/" target="_blank">FAO Crop Production</a> - Food and Agriculture Organization</li>
+                            <li><a href="https://www.cabi.org/" target="_blank">CABI</a> - Centre for Agriculture and Bioscience International</li>
+                            <li><a href="https://www.plantphysiol.org/" target="_blank">Plant Physiology Journal</a> - American Society of Plant Biologists</li>
+                            <li><a href="https://www.usda.gov/topics/crops" target="_blank">USDA Crops</a> - United States Department of Agriculture</li>
+                        </ul>
+                    </div>
+                    <div class="resource-category">
+                        <h3>🧪 Soil Science</h3>
+                        <ul>
+                            <li><a href="https://soils.org/" target="_blank">Soil Science Society of America</a></li>
+                            <li><a href="https://www.fao.org/soils-portal/en/" target="_blank">FAO Soils Portal</a></li>
+                            <li><a href="https://www.nrcs.usda.gov/wps/portal/nrcs/main/soils/" target="_blank">USDA NRCS Soils</a></li>
+                            <li><a href="https://www.worldsoilresources.org/" target="_blank">International Union of Soil Sciences</a></li>
+                        </ul>
+                    </div>
+                    <div class="resource-category">
+                        <h3>🛡️ Crop Protection</h3>
+                        <ul>
+                            <li><a href="https://www.ippc.int/" target="_blank">International Plant Protection Convention</a></li>
+                            <li><a href="https://www.cabi.org/isc/" target="_blank">CABI Invasive Species Compendium</a></li>
+                            <li><a href="https://www.epa.gov/pesticides" target="_blank">EPA Pesticides</a></li>
+                            <li><a href="https://www.croplife.org/" target="_blank">CropLife International</a></li>
+                        </ul>
+                    </div>
+                    <div class="resource-category">
+                        <h3>🐄 Animal Science</h3>
+                        <ul>
+                            <li><a href="https://www.fao.org/livestock-en/" target="_blank">FAO Livestock</a></li>
+                            <li><a href="https://www.asas.org/" target="_blank">American Society of Animal Science</a></li>
+                            <li><a href="https://www.oie.int/" target="_blank">World Organisation for Animal Health</a></li>
+                            <li><a href="https://www.ars.usda.gov/ocs/animal-production/" target="_blank">USDA Animal Production</a></li>
+                        </ul>
+                    </div>
+                    <div class="resource-category">
+                        <h3>📊 Agricultural Economics</h3>
+                        <ul>
+                            <li><a href="https://www.fao.org/economic/en/" target="_blank">FAO Economic and Social Development</a></li>
+                            <li><a href="https://www.iaae-agecon.org/" target="_blank">International Association of Agricultural Economists</a></li>
+                            <li><a href="https://www.ers.usda.gov/" target="_blank">USDA Economic Research Service</a></li>
+                            <li><a href="https://www.ifpri.org/" target="_blank">International Food Policy Research Institute</a></li>
+                        </ul>
+                    </div>
+                    <div class="resource-category">
+                        <h3>📢 Agricultural Extension</h3>
+                        <ul>
+                            <li><a href="https://www.gfras.net/" target="_blank">Global Forum for Rural Advisory Services</a></li>
+                            <li><a href="https://extension.org/" target="_blank">eXtension</a> - Cooperative Extension System</li>
+                            <li><a href="https://www.fao.org/family-farming-trust/en/" target="_blank">FAO Family Farming Knowledge Platform</a></li>
+                            <li><a href="https://www.rural21.com/" target="_blank">rural21</a> - International Journal for Rural Development</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="about-section">
+            <div class="container">
+                <h2>About Grass.com</h2>
+                <div class="about-content">
+                    <p>Welcome to <strong>Grass.com</strong>, your premier online review portal for the Licensure Examination for Agriculturists. Our platform provides comprehensive resources to help aspiring agriculturists succeed in their licensure exams and advance their careers.</p>
+                    
+                    <p>Our platform offers:</p>
+                    <ul>
+                        <li>Structured review materials for all six major subject areas</li>
+                        <li>100-question mock examinations for each subject area</li>
+                        <li>Curated list of reliable online resources from international organizations</li>
+                        <li>Progress tracking and performance analysis</li>
+                        <li>Regularly updated content based on current agricultural practices and technologies</li>
+                    </ul>
+                    
+                    <p>The mock examinations are designed to simulate the actual licensure exam format, helping you become familiar with the types of questions and time constraints you'll face. Each exam covers the full scope of knowledge required for that subject area.</p>
+                    
+                    <p>At Grass.com, we're committed to providing high-quality educational resources that empower future agriculturists. Our name reflects our commitment to the foundation of agriculture - healthy grasslands, sustainable farming practices, and the growth of knowledge in the agricultural sciences.</p>
+                    
+                    <p>This portal is continuously updated to reflect the latest developments in agricultural science and practice, ensuring that you're studying the most current information available.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Grass.com - Agriculturist Licensure Review Portal. All rights reserved.</p>
+            <p>This is an educational resource and is not affiliated with any official licensing body.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

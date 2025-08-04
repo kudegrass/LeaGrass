@@ -1,0 +1,26 @@
+{
+  "name": "grasscom-review",
+  "version": "1.0.0",
+  "description": "Agriculturist Licensure Exam Review Website",
+  "main": "server/server.js",
+  "scripts": {
+    "start": "node server/server.js",
+    "dev": "nodemon server/server.js"
+  },
+  "keywords": [
+    "agriculture",
+    "review",
+    "exam",
+    "licensure"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
+}
